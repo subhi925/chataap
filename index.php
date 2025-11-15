@@ -47,7 +47,7 @@ include('db.php');
             $insert = "INSERT INTO chat (name, msg) values ('$n','$m') ";
             $run_insert = mysqli_query($con, $insert);
             if ($run_insert) {
-                header('Location: index.php?notif=1');
+                header('Location: index.php');
                 exit();
             }
         }
@@ -58,13 +58,7 @@ include('db.php');
         ?>
 
     </div>
-    <audio id="notif" src="notfic.mp3" hidden></audio>
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        if (params.get("notif") === "1") {
-            document.getElementById("notif").play();
-        }
-    </script>
+
 
 </body>
 
